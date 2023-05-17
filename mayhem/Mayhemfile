@@ -10,4 +10,5 @@ cmds:
 
   - cmd: /imgRead @@
     afl: true
+    timeout: 10
     sanitizer: true
