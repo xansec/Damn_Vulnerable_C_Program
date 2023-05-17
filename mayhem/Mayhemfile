@@ -1,7 +1,7 @@
 project: dvcp
 target: imgRead
 
-advanced_triage: true 
+advanced_triage: false 
 
 testsuite:
   - file://testsuite
