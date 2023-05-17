@@ -4,7 +4,7 @@ target: imgRead
 advanced_triage: true 
 
 testsuite:
-  - file:///testsuite
+  - file://testsuite
 
 cmds:
 
