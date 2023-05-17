@@ -8,4 +8,4 @@ FROM ubuntu
 
 RUN apt update -y && apt install -y libasan6 libubsan1
 COPY --from=builder /imgRead /
-COPY --from=builder /mayhem/testsuite /testsuite
+COPY --from=builder /testsuite /testsuite
