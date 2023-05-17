@@ -5,11 +5,16 @@
 #website: http://hardik05.wordpress.com
 #**************************************
  
- CC=afl-gcc  #compiler
- TARGET=imgRead #target file name
+ CC=gcc
+ CFLAGS=-g
+ AFLCC=afl-gcc  #compiler
+ TARGET=imgRead #target output name
+ FILE=imgRead.c #target input name
   
-all:
-	   AFL_HARDEN=1 $(CC) -fsanitize=address -fno-omit-frame-pointer -fsanitize=undefined imgRead.c -o $(TARGET)
+uninst:
+	   $(CC) $(CFLAGS) -fsanitize=address -fno-omit-frame-pointer -fsanitize=undefined $(FILE) -o $(TARGET)
+afl:
+	   AFL_HARDEN=1 $(AFLCC) -fsanitize=address -fno-omit-frame-pointer -fsanitize=undefined $(FILE) -o $(TARGET)
 	     
 clean:
 	    rm $(TARGET)

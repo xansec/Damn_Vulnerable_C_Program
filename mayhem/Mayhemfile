@@ -1,0 +1,13 @@
+project: dvcp
+target: imgRead
+
+advanced_triage: true 
+
+testsuite:
+  - file://testsuite
+
+cmds:
+
+  - cmd: /imgRead @@
+    afl: true
+    sanitizer: true
